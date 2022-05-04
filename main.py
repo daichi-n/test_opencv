@@ -23,6 +23,8 @@ def main(cap):
         cv2.accumulateWeighted(gray, avg, 0.6)
         frameDelta = cv2.absdiff(gray, cv2.convertScaleAbs(avg))
 
+        cv2.imshow("FrameDelta", frameDelta)
+
         # デルタ画像を閾値処理を行う
         thresh = cv2.threshold(frameDelta, 3, 255, cv2.THRESH_BINARY)[1]
         # 画像の閾値に輪郭線を入れる
