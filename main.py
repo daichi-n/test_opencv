@@ -20,7 +20,7 @@ def main(cap):
             continue
 
         # 現在のフレームと移動平均との差を計算
-        cv2.accumulateWeighted(gray, avg, 0.6)
+        cv2.accumulateWeighted(gray, avg, 0.95)
         frameDelta = cv2.absdiff(gray, cv2.convertScaleAbs(avg))
 
         cv2.imshow("FrameDelta", frameDelta)
